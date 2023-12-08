@@ -9,9 +9,9 @@ part 'weather_state.dart';
 part 'weather_bloc.freezed.dart';
 
 class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
-  final IWeatherRepository weatherRepositoryImpl;
+  final IWeatherRepository _weatherRepositoryImpl;
 
-  WeatherBloc(this.weatherRepositoryImpl)
+  WeatherBloc(this._weatherRepositoryImpl)
       : super(const WeatherState.inProgress()) {
     on<_Init>(_init);
     on<_GetForecastByCityName>(_onGetForecastByCityName);
@@ -24,7 +24,7 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
     try {
       final cityName = await GeoUtil.getCurrentCity();
 
-      final wheathers = await weatherRepositoryImpl.getForecast(
+      final wheathers = await _weatherRepositoryImpl.getForecast(
         cityName: cityName,
       );
 
@@ -41,7 +41,7 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
     emit(const WeatherState.inProgress());
 
     try {
-      final wheathers = await weatherRepositoryImpl.getForecast(
+      final wheathers = await _weatherRepositoryImpl.getForecast(
         cityName: event.cityName,
       );
 

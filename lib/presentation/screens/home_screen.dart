@@ -12,9 +12,7 @@ import 'package:weather_app/presentation/widgets/temps_details_tile.dart';
 import 'package:weather_app/presentation/widgets/weather_condition_animated_icon.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({
-    super.key,
-  });
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -93,3 +91,8 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
+
+
+
+
+
