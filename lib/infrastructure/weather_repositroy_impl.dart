@@ -2,10 +2,9 @@ import 'package:weather/weather.dart' hide Weather;
 import 'package:weather_app/domain/entities/weather.dart';
 import 'package:weather_app/domain/i_weather_repository.dart';
 
-const String _key = 'eabf5d8815965fd70561f2bf34cf5d55';
-
 class WeatherRepositoryImpl implements IWeatherRepository {
-  final WeatherFactory _wf = WeatherFactory(_key);
+  static const String _openWeatherKey = 'eabf5d8815965fd70561f2bf34cf5d55';
+  final WeatherFactory _wf = WeatherFactory(_openWeatherKey);
 
   @override
   Future<List<Weather>> getForecast({required String cityName}) async {
