@@ -32,7 +32,7 @@ abstract class AnimationUtils {
             child: child,
           );
         },
-        transitionDuration: const Duration(milliseconds: 700),
-        reverseTransitionDuration: const Duration(milliseconds: 700));
+        transitionDuration: const Duration(milliseconds: 900),
+        reverseTransitionDuration: const Duration(milliseconds: 900));
   }
 }
