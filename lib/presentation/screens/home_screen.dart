@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:lottie/lottie.dart';
 
 import 'package:weather_app/application/weather_bloc.dart';
 import 'package:weather_app/domain/entities/weather.dart';
@@ -45,9 +46,11 @@ class HomeScreen extends StatelessWidget {
                 child: const Text('Retry'),
               ),
             ),
-            inProgress: (value) => const Center(
-              child: CircularProgressIndicator(
-                backgroundColor: Colors.white,
+            inProgress: (value) => Center(
+              child: Lottie.asset(
+                'assets/animations/loading.json',
+                width: 300,
+                height: 300,
               ),
             ),
             success: (succes) {
@@ -91,8 +94,3 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-
-
-
-
-

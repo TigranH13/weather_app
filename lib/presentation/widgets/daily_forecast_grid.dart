@@ -37,6 +37,7 @@ class DailyForecastGrid extends StatelessWidget {
                   onTap: () => Navigator.of(context).push(
                     AnimationUtils.createAnimatedRoute(
                       DailyDetailScreen(
+                      
                         date: dailyForecast[index].date,
                       ),
                     ),
